@@ -1,6 +1,6 @@
 # Docling Insurance Policy Extraction Demo
 
-End-to-end reference pipeline that turns an insurance policy PDF into rich structured artifacts you can use for exploration, compliance review, or downstream analytics. The script is built around Docling’s PDF pipeline, a hierarchical chunker, and an optional two-pass LLM workflow that captures detailed clause and tariff information.
+End-to-end reference pipeline that turns any PDF (insurance policies are just the running example) into rich structured artifacts you can use for exploration, compliance review, or downstream analytics. The script is built around Docling’s PDF pipeline, a hierarchical chunker, and an optional two-pass LLM workflow that captures detailed clause and tariff information.
 
 ## Features at a Glance
 
@@ -112,3 +112,8 @@ You can drop these into a `.env` file (loaded automatically when `python-dotenv`
 ```
 
 Feel free to customize `demo.py` for your own ontology, different LLM vendors, or alternative downstream targets—the pipeline is modular enough to drop in new serializers or schemas as needed.
+
+## Known Issues
+
+- Throughput is currently slower than we would like, especially on large documents; performance work is planned.
+- LLM caching occasionally misbehaves, so you may see duplicate calls or cache misses—we will address this in a future update.
