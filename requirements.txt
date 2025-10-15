@@ -1,0 +1,4 @@
+docling[vlm]>=2.56.1
+tiktoken>=0.7.0
+openai>=2.3.0
+python-dotenv>=1.0.1
