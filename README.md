@@ -1,4 +1,4 @@
-# Docling Insurance Policy Extraction Demo
+# Docling PDF Extraction Demo
 
 End-to-end reference pipeline that turns any PDF (insurance policies are just the running example) into rich structured artifacts you can use for exploration, compliance review, or downstream analytics. The script is built around Docling’s PDF pipeline, a hierarchical chunker, and an optional two-pass LLM workflow that captures detailed clause and tariff information.
 
@@ -29,7 +29,7 @@ pip install -r requirements.txt
 # Run Docling only (no LLM passes):
 python demo.py samples/sample_policy.pdf --skip-llm
 
-# Run the full two-pass extraction:
+# Run the full two-pass extraction (replace the sample path with your own PDF):
 OPENAI_API_KEY=sk-... python demo.py samples/sample_policy.pdf
 ```
 
@@ -84,7 +84,7 @@ Paths use the PDF filename stem unless you override them with CLI flags.
 6. **Graph Assembly**  
    Pass 0–2 outputs are woven into a graph that surfaces duplicate clauses/tariffs, conflicting monetary values, detection categories, and references back to the original sections.
 
-This architecture makes it straightforward to inspect policies interactively, push data into a graph database, or run audits that require traceable citations.
+This architecture makes it straightforward to inspect complex documents (insurance policies and beyond) interactively, push data into a graph database, or run audits that require traceable citations.
 
 ## Environment Variables
 
